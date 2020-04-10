@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Vue app</title>
+        <script src="vue.js"></script>
+    </head>
+    <body>
+        <h1>This is first vue app</h1>
+        <div id = "app">
+            <h1 v-once>{{once}} </h1>
+            <h2>{{ title }}</h2>
+            <h2>{{ heading }}</h2>
+
+            <!-- v-on can be replaced with @ -->
+            <input type="text" v-on:input="changeTitle">
+            
+            <input type="text" @input="changeTitle">
+
+            <!-- v-bind can simply be not written -->
+            <a v-bind:href="link">Google</a>
+            
+            <h1>{{dynamic_text}}</h1>
+            <h1>{{ sayHello('parameter') }}</h1>
+            <h1 v-html="htmlElement"></h1>
+            <hr>
+            <h2>Counter</h2>
+            <hr>
+            <h1>{{count}}</h1>
+            <hr>
+            <button v-on:click="increment">Increase</button>
+            <hr>
+            <h1>Mouse Co-Ordinates</h1>
+            <p v-on:mousemove="updateCoords">{{x_coord}} - {{y_coord}}
+                - <span v-on:mousemove.stop>Dead Spot</span>
+            </p>
+            <input type="text" v-on:keyup.enter="alertMe">
+            <hr>
+            <input type="text" v-model="name">
+            <h1>{{name}}</h1>
+            <button v-on:click="counter++">Increase Counter</button>
+            <button v-on:click="secondcounter++">Increase SecondCounter</button>
+            <p>{{ counter }} || {{secondcounter}}</p>
+            <p>{{incrementCounter()}} || {{compFunc}}</p>
+            
+        </div>
+        <script src="app.js"></script>
+   
+    </body>
+</html> 

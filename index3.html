@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <style>
+        p{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <hr>
+        <p><h1>v-if, v-else and v-show</h1></p>
+        <hr>
+        {{hello}}
+        <!-- If and else statement -->
+        <!-- Completely attaches or detaches the element -->
+        <!-- NOTE: No elseif statement -->
+        <p v-if="show">Hide</p>
+        <p v-else>Seek</p>
+        <!-- v-show simply hides the element -->
+        <p v-show="show">
+            This paragraph is not detached instead, display:none is enabled
+        </p>
+        <button @click="show = ! show"> {{show}}</button>
+
+        <!-- for loop -->
+        <hr>
+        <p><h1>v-for</h1></p>
+        <hr>
+        <ol>
+            <li v-for="(animal,i) in animals">{{ i }} {{ animal }}</li>
+        </ol>
+        <!-- Push elements into array  -->
+        <input type="text" name="some" v-model="element" @keyup.enter="pushInto(element)">
+        <button @click="pushInto(element)">Push</button>
+
+        <!-- Nested Loop to print Objects -->
+        <ol>
+            <li v-for="person in persons">
+                <div v-for ="(value,key,index) in person"> 
+                   Value:  {{value}}, Key:{{key}} , index:{{index}}
+                </div>
+            </li>
+        </ol>
+        <!-- for loop upto a range -->
+        <div>
+            <span v-for="i in 10">{{ i }}</span>
+        </div>
+    </div>
+
+</body>
+<script src="app3.js"></script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .boxy{
+           background-color: black;
+           width: 100px;
+           height: 100px;
+           display: inline-block;
+           margin: 10px; 
+        }
+        .makered{
+            background-color: red;
+        }
+        .makeblue{
+            background-color: blue;
+        }
+    </style>
+    <script src="vue.js"></script>
+  
+</head>
+<body>
+    <div class = "app">
+        <div class="boxy" @click= "attachRed = !attachRed" :class = "swapColor"></div>
+        <div class="boxy" @click="attachBlue = !attachBlue" :class="swapColor"></div>
+        <div class="boxy" :style="myStyle"></div>
+        <hr>
+        <input type="text" v-model="color">
+    </div>
+    
+</body>
+    <script src="app2.js"></script> 
+</html>
